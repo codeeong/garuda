@@ -7,29 +7,41 @@ const
 	source     = require('vinyl-source-stream'),
 	buffer     = require('vinyl-buffer'),
 	gutil      = require('gulp-util'),
-	sourcemaps = require('gulp-sourcemaps')
+	sourcemaps = require('gulp-sourcemaps'),
+	prettyTime = require('pretty-hrtime')
 
-// add custom browserify options here
-const customOpts = {
-	"entries": "./src/index.jsx",
-	"basedir": "/",
-	"dest": "./build",
-	"outputName": "index.js"
+const filesConfig = [
+	{
+		"original": "./src/index.jsx",
+		"output":   "index.js"
+	},
+	{
+		"original": "./src/login.jsx",
+		"output":   "login.js"
+	}
+]
+let filesCount = filesConfig.length
+
+let startTime
+
+function logStart(filepath) {
+	startTime = process.hrtime()
+	gutil.log('Bundling', gutil.colors.green(filepath) + '...')
+}
+function logEnd(filepath) {
+	let taskTime = process.hrtime(startTime)
+	taskTime = prettyTime(taskTime)
+	gutil.log('Bundled', gutil.colors.green(filepath), 'in', gutil.colors.magenta(taskTime))
 }
 
-gulp.task('clean-build', function() {
-	del.sync(['./build/**'])
-})
-
-gulp.task('build', ['clean-build'], function(cb) {
-	console.log("ツ Build started")
+const browserifyThis = function(config, cb) {
 
 	let b = browserify({
 			// Required watchify args
 			cache: {},
 			packageCache: {},
 			fullPaths: false,
-			entries: './src/index.jsx',
+			entries: config.original,
 			paths: ['./node_modules', './src/components/'],
 			debug: true
 		})
@@ -41,9 +53,11 @@ gulp.task('build', ['clean-build'], function(cb) {
 	b = watchify(b)
 
 	function bundle() {
-		return b.bundle()
+		logStart(config.output)
+
+		b.bundle()
 		.on('error', gutil.log.bind(gutil, 'Browserify Error'))
-		.pipe(source('index.js'))
+		.pipe(source(config.output))
 		.pipe(gulp.dest('./build'))
 		.on('end', reportFinished)
 	}
@@ -52,11 +66,27 @@ gulp.task('build', ['clean-build'], function(cb) {
 	b.on('log', gutil.log)
 
 	const reportFinished = function() {
-		console.log("ツ Build ended")
-		cb()
+		logEnd(config.output)
+
+		if (filesCount) {
+			filesCount--
+			if (filesCount === 0) {
+				console.log('ツ Build ended')
+				cb()
+			}
+		}
 	}
 
 	return bundle()
+}
+gulp.task('clean-build', function() {
+	del.sync(['./build/**'])
+})
+
+gulp.task('build', ['clean-build'], function(cb) {
+	// Call cb once only to tell gulp we're done
+	console.log('ツ Build started')
+	filesConfig.forEach(config => browserifyThis(config, cb))
 })
 
 gulp.task('default', ['build'], function(cb) {

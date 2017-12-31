@@ -86,6 +86,9 @@ app.use('/js',  express.static(path.join(__dirname, '/static/js'),  { maxAge: '1
 app.get('/', (req, res) => { res.sendFile(__dirname + '/static/index.html') })
 app.get('/index.js', (req, res) => { res.sendFile(__dirname + '/build/index.js') })
 
+app.get('/login', (req, res) => { res.sendFile(__dirname + '/static/login.html') })
+app.get('/login.js', (req, res) => { res.sendFile(__dirname + '/build/login.js') })
+
 
 
 // AJAX calls can be handled here

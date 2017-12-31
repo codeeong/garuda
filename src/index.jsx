@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+import Footer from 'Footer.jsx'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 export default class Index extends Component {
@@ -16,7 +17,8 @@ export default class Index extends Component {
 	render = () => {
 		return (
 			<div>
-				<h1>Hello Humans</h1>
+				<h1>Happy New Year!</h1>
+				<Footer />
 			</div>
 		)
 	}
