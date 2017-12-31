@@ -1,0 +1,51 @@
+{
+  "name": "sample-web-app",
+  "version": "1.0.0",
+  "description": "This will be populated soon with a meaningful, getting started guide.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jiinjoo-soc@bitbucket.org/garudaroboticssoc/sample-web-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/garudaroboticssoc/sample-web-app#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "babel-runtime": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "connect-redis": "^3.3.2",
+    "del": "^3.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-winston": "^2.4.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.20.0",
+    "nano": "^6.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "redis": "^2.8.0",
+    "redis-server": "^1.1.0",
+    "require": "^2.4.20",
+    "sendgrid": "^5.2.3",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.9.0"
+  }
+}
