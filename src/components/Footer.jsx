@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FlatButton from 'material-ui/FlatButton';
 
 export default class Footer extends Component {
 
@@ -10,14 +11,17 @@ export default class Footer extends Component {
 				width: '100%',
 				borderTop: '1px solid #ddd',
 				textAlign: 'center',
-				padding: '16px'
 			}
 
 		return (
 			<div style={footerStyle}>
-				This is a sample component.<br />
+			    <FlatButton label="My Jobs" primary={true} />
+			    <FlatButton label="Job Requests" primary={true} />
+				<FlatButton label="Job History" primary={true} />
+			    <FlatButton label="Search" primary={true} />
+			    <FlatButton label="Profile" primary={true} />
 				<br />
-				You use components to break pages up into logical classes.
+				<br />
 			</div>
 		)
 	}
