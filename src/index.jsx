@@ -14,65 +14,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 
 const muiTheme = getMuiTheme(darkBaseTheme);
-/*
-export default class Index extends Component {
-
-	static defaultProps = {
-
-	}
-
-	state = {
-		//currentTab: 'job-request' // my-jobs, job-request, job-history, profile, search
-		currentTab:'my-jobs'
-	}
-
-	render = () => {
-
-		const SkyStyle = {
-			position: 'fixed',
-			fontSize: '30px',
-			top: '5px',
-			left: '5px',
-			width: '100%',
-			color: '#0D47A1',
-		};
-
-
-		if (this.state.currentTab === 'job-request') {
-			return (
-				<div>
-					<div style = {SkyStyle}>
-						<h1> SkyWorks </h1>
-						<img src="skyworkslogo.jpeg" alt="Logo"/>
-					<JobRequests />
-					</div>
-					<NavBar />
-					<Footer />
-				</div>
-		 	)
-		} else {
-			return (
-				<div>
-					<div style = {SkyStyle}>
-						<img src='img/skyworkslogo.jpeg' height='10%' width='18%' alt="Logo"/>
-					<MyJobs />
-					</div>
-					<NavBar />
-					<Footer />
-
-				</div>
-			)
-		}
-	}
-
-}*/
 
 export default class Index extends Component {
 	render = () => {
 		return (
 			<div>
 				<div>
-					<img src='img/skyworkslogo.jpeg' height='10%' width='22%' alt="Logo"/>
+					<img src='img/skyworks.png' height='15%' width='27%' alt="Logo"/>
 				</div>
 				<NavBar />
 				<Footer />
@@ -81,5 +29,6 @@ export default class Index extends Component {
 		)
 	}
 }
+
 
 ReactDOM.render(<MuiThemeProvider muiTheme ={muiTheme}><Index /></MuiThemeProvider>, document.getElementById('container'))

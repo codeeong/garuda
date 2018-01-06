@@ -7,7 +7,7 @@ import FlatButton from 'material-ui/FlatButton';
     width: '70%',
     transitionDuration: '0.3s',
     height: '50%',
-    margin: '10%'
+    margin: '7%'
 }
 
 

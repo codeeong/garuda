@@ -11,15 +11,15 @@ import FlatButton from 'material-ui/FlatButton';
 }
 
 
-const MyJobs = () => (
-
-
-	  <Card style = {cardStyle}>
-	    <CardHeader
-	      title="Job 1"
-	      subtitle="Status: Applying for CAAS Permit"
-	      //avatar="images/download.jpg"
-	    />
+const CardExampleExpandable = () => (
+  <Card style = {cardStyle}>
+    <CardHeader
+      title="Job 1"
+      subtitle="Status: Cancelled - Operator Declined Job"
+      actAsExpander={true}
+      showExpandableButton={true}
+    />
+    <CardText expandable={true}>
 	    <CardTitle title="John Tan" subtitle="91234567" />
 
 
@@ -32,18 +32,11 @@ const MyJobs = () => (
 	    <CardText>
 	    Job Requested : 3D Map of Building
 	    </CardText>
-	    <CardText>
-	    See Map (map beside)
-	    </CardText>
+    </CardText>
 
 
-
-	    <CardActions>
-	      <FlatButton label="Accept" />
-	      <FlatButton label="Decline" />
-	    </CardActions>
-	  </Card>
-
+  </Card>
+  
 );
 
-export default MyJobs;
+export default CardExampleExpandable;
