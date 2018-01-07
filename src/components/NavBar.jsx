@@ -16,7 +16,6 @@ import Profile from 'Profile.jsx'
 		top: '90px',
 		width: '100%',
 		borderTop: '2px solid #ddd',
-		borderBottom: '2px solid #ddd',
 		textAlign: 'left',
 
 	};

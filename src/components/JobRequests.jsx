@@ -2,14 +2,14 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
- var cardStyle = {
+  var cardStyle = {
     display: 'block',
     width: '70%',
     transitionDuration: '0.3s',
     height: '50%',
-    margin: '7%'
+    marginLeft: '10%',
+    marginTop: '5%'
 }
-
 
 const JobRequest = () => (
 
