@@ -1,4 +1,3 @@
-
 import React from 'react'
 import FlatButton from 'material-ui/FlatButton';
 
@@ -10,6 +9,7 @@ import {
 import JobRequests from 'JobRequests.jsx'
 import MyJobs from 'MyJobs.jsx'
 import History from 'History.jsx'
+import Profile from 'Profile.jsx'
 
 	const style = {
 		position: 'fixed',
@@ -44,10 +44,17 @@ const NavBar = () => (
 	    linkButton={true}
 	    label="Job History" 
 	    primary={true} />
+	    <FlatButton     
+	    containerElement={<Link to="/myprofile" />}
+	    labelStyle = {{fontSize:'17px'}} 
+	    linkButton={true}
+	    label="Profile" 
+	    primary={true} />
 
 	    <Route exact path="/" component={Home}/>
 	    <Route path="/jobreq" component={JobReq}/>
 	    <Route path="/jobhistory" component={JobHistory}/>
+	    <Route path="/myprofile" component={MyProfile}/>
 
 
 
@@ -78,6 +85,11 @@ const JobHistory = () => (
   </div>
 );
 
+const MyProfile = () => (
+  <div>
+    <Profile />
+  </div>
+);
 
 export default NavBar;  
 

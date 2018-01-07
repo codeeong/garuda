@@ -20,23 +20,45 @@ const CardExampleExpandable = () => (
       showExpandableButton={true}
     />
     <CardText expandable={true}>
-	    <CardTitle title="John Tan" subtitle="91234567" />
+      <CardTitle title="John Tan" subtitle="91234567" />
 
 
-	    <CardText>
-	    Email: johntan@gmail.com
-	    </CardText>
-	    <CardText>
-	    Date Requested: 12/04/2018
-	    </CardText>
-	    <CardText>
-	    Job Requested : 3D Map of Building
-	    </CardText>
+      <CardText>
+      Email: johntan@gmail.com
+      </CardText>
+      <CardText>
+      Date Requested: 12/04/2018
+      </CardText>
+      <CardText>
+      Job Requested : 3D Map of Building
+      </CardText>
+
+    </CardText>
+    
+    <CardHeader
+      title="Job 2"
+      subtitle="Status: Completed"
+      actAsExpander={true}
+      showExpandableButton={true}
+    />
+      <CardText expandable={true}>
+      <CardTitle title="Bob Tan" subtitle="91234567" />
+
+
+      <CardText>
+      Email: bobtan@gmail.com
+      </CardText>
+      <CardText>
+      Date Requested: 12/04/2018
+      </CardText>
+      <CardText>
+      Job Requested : 3D Map of Building
+      </CardText>
     </CardText>
 
 
   </Card>
-  
+
 );
 
 export default CardExampleExpandable;
