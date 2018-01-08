@@ -20,7 +20,7 @@ export default class Index extends Component {
 		return (
 			<div>
 				<div>
-					<img src='img/skyworks.png' height='15%' width='27%' alt="Logo"/>
+					<img src='img/skyworks.png' height='100px' width='250px' alt="Logo"/>
 				</div>
 				<NavBar />
 				<Footer />
